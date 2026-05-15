@@ -2,11 +2,10 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-# Rutas absolutas relativas a la raiz del repo
-ROOT = Path(__file__).parent.parent
-DATA = ROOT / "data" / "estado.json"
+ROOT     = Path(__file__).parent.parent
+DATA     = ROOT / "data" / "estado.json"
 TEMPLATE = ROOT / "src" / "template.html"
-PUBLIC = ROOT / "public"
+PUBLIC   = ROOT / "public"
 
 data = json.loads(DATA.read_text(encoding="utf-8"))
 PUBLIC.mkdir(exist_ok=True)
