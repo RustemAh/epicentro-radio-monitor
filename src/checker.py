@@ -6,7 +6,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from streams import STREAMS
 
 TIMEOUT = 10
-REINTENTOS = 2
+REINTENTOS = 3
 
 def check_stream(s):
     for i in range(REINTENTOS):
