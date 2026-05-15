@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
       - run: pip install requests
       - name: Verificar senales
-        run: cd src && python checker.py && cd ..
+        run: python src/checker.py
       - name: Commit estado
         run: |
           git config user.name "Epicentro Bot"
@@ -29,7 +29,7 @@ jobs:
           git diff --staged --quiet || git commit -m "Senales actualizadas $(date '+%d/%m/%Y %H:%M')"
           git push
       - name: Generar HTML
-        run: cd src && python build.py && cd ..
+        run: python src/build.py
       - name: Deploy GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
