@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="refresh" content="300">
+<title>Epicentro Radio — Monitor de Señales</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root,[data-theme="light"]{
+--bg:#f7f6f2;--s1:#f9f8f5;--soff:#edeae5;--bd:rgba(0,0,0,.09);
+--tx:#28251d;--mu:#7a7974;--fa:#b5b2ad;
+--pr:#c0392b;--pb:rgba(192,57,43,.1);
+--gn:#27ae60;--gnb:rgba(39,174,96,.12);--gnp:#1e8449;
+--rd:#e74c3c;--rdb:rgba(231,76,60,.12);
+--yl:#c9960a;--bl:#2471a3;--blb:rgba(36,113,163,.1);
+--or:#f39c12;--orb:rgba(243,156,18,.12);
+--ss:0 1px 3px rgba(0,0,0,.07);--sm:0 4px 16px rgba(0,0,0,.09);
+--fn:"Inter",sans-serif;--fd:"Instrument Serif",Georgia,serif;--tr:180ms ease;
+}
+[data-theme="dark"]{
+--bg:#0f0f0e;--s1:#161513;--soff:#1e1d1b;--bd:rgba(255,255,255,.07);
+--tx:#cccac7;--mu:#78766f;--fa:#525049;
+--pr:#e74c3c;--pb:rgba(231,76,60,.13);
+--gn:#2ecc71;--gnb:rgba(46,204,113,.13);--gnp:#27ae60;
+--rd:#e74c3c;--rdb:rgba(231,76,60,.13);
+--yl:#f1c40f;--bl:#5dade2;--blb:rgba(93,173,226,.12);
+--or:#f39c12;--orb:rgba(243,156,18,.12);
+--ss:0 1px 3px rgba(0,0,0,.35);--sm:0 4px 16px rgba(0,0,0,.45);
+}
+body{min-height:100dvh;font-family:var(--fn);font-size:1rem;color:var(--tx);background:var(--bg);}
+header{position:sticky;top:0;z-index:100;background:var(--s1);border-bottom:1px solid var(--bd);padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
+.logo svg{width:34px;height:34px;flex-shrink:0;}
+.logo-name{font-family:var(--fd);font-style:italic;font-size:1.25rem;color:var(--pr);line-height:1;}
+.logo-sub{font-size:.75rem;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+.hdr-r{display:flex;align-items:center;gap:.5rem;}
+.tag{font-size:.75rem;color:var(--mu);padding:2px .75rem;background:var(--soff);border-radius:9999px;border:1px solid var(--bd);}
+.ibtn{width:34px;height:34px;border-radius:.5rem;display:flex;align-items:center;justify-content:center;color:var(--mu);cursor:pointer;border:none;background:transparent;}
+.ibtn:hover{background:var(--soff);}
+.wrap{max-width:1200px;margin:0 auto;padding:2rem 1.5rem;}
+@media(max-width:600px){.wrap{padding:1rem;}header{padding:.75rem 1rem;}}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem;margin-bottom:2rem;}
+.hcard{background:var(--s1);border:1px solid var(--bd);border-radius:1rem;padding:1.25rem;text-align:center;}
+.hcard-n{font-family:var(--fd);font-style:italic;font-size:2.5rem;line-height:1;}
+.hcard-l{font-size:.72rem;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.hcard.online .hcard-n{color:var(--gn);}.hcard.offline .hcard-n{color:var(--rd);}.hcard.total .hcard-n{color:var(--pr);}
+.controls{display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap;align-items:center;}
+.sw{position:relative;flex:1;min-width:180px;}
+.sw svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--mu);pointer-events:none;}
+input[type=text]{width:100%;background:var(--s1);border:1px solid var(--bd);border-radius:.5rem;padding:.625rem 1rem .625rem 34px;font:inherit;font-size:.875rem;color:var(--tx);}
+input:focus{outline:none;border-color:var(--pr);}
+select{background:var(--s1);border:1px solid var(--bd);border-radius:.5rem;padding:.625rem 2rem .625rem 1rem;font:inherit;font-size:.875rem;color:var(--tx);cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23797876' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
+select:focus{outline:none;border-color:var(--pr);}
+.filter-btn{padding:.5rem 1rem;border-radius:.5rem;font:inherit;font-size:.875rem;font-weight:600;cursor:pointer;border:1px solid var(--bd);background:var(--s1);color:var(--mu);white-space:nowrap;}
+.filter-btn.on{background:var(--gnb);color:var(--gn);border-color:var(--gn);}
+.filter-btn.on.off2{background:var(--rdb);color:var(--rd);border-color:var(--rd);}
+.cat-tabs{display:flex;gap:.5rem;margin-bottom:1.75rem;flex-wrap:wrap;}
+.ctab{padding:.5rem 1.1rem;border-radius:9999px;font:inherit;font-size:.8rem;font-weight:700;cursor:pointer;border:1px solid var(--bd);background:var(--s1);color:var(--mu);transition:all .15s ease;}
+.ctab:hover{background:var(--soff);}
+.ctab.active-aire{background:var(--gnb);color:var(--gn);border-color:var(--gn);}
+.ctab.active-cadena{background:var(--blb);color:var(--bl);border-color:var(--bl);}
+.ctab.active-enlace{background:rgba(241,196,15,.12);color:var(--yl);border-color:var(--yl);}
+.ctab.active-all{background:var(--pb);color:var(--pr);border-color:var(--pr);}
+.zona-section{margin-bottom:2.5rem;}
+.zona-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--bd);}
+.zona-title{font-size:1.1rem;font-weight:700;}
+.zona-badge{font-size:.72rem;color:var(--mu);background:var(--soff);padding:2px 8px;border-radius:9999px;}
+.zona-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.zc-Valparaiso{background:#3498db;}.zc-Coquimbo{background:#2ecc71;}.zc-Atacama{background:#e67e22;}
+.zc-Biobio{background:#9b59b6;}.zc-Magallanes{background:#1abc9c;}.zc-Los-Rios{background:#27ae60;}
+.zc-Nacional{background:#e74c3c;}.zc-O-Higgins{background:#f39c12;}
+.signals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;}
+.scard{background:var(--s1);border:1px solid var(--bd);border-radius:1rem;padding:1.25rem;display:flex;flex-direction:column;gap:.65rem;box-shadow:var(--ss);transition:box-shadow .15s,transform .15s;}
+.scard:hover{box-shadow:var(--sm);transform:translateY(-1px);}
+.scard.online{border-left:3px solid var(--gn);}.scard.offline{border-left:3px solid var(--rd);}
+.scard.silencio{border-left:3px solid var(--or);}
+.status-bar{display:flex;align-items:center;justify-content:space-between;}
+.status-pill{display:flex;align-items:center;gap:.375rem;padding:3px 10px;border-radius:9999px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+.status-pill.online{background:var(--gnb);color:var(--gn);}.status-pill.offline{background:var(--rdb);color:var(--rd);}
+.status-pill.silencio{background:var(--orb);color:var(--or);}
+.pulse{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.pulse.online{background:var(--gn);animation:pulse 2s infinite;}.pulse.offline{background:var(--rd);}
+.pulse.silencio{background:var(--or);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.freq{font-size:.72rem;color:var(--mu);font-weight:600;}
+.scard-name{font-size:1.05rem;font-weight:700;line-height:1.2;}
+.scard-ciudad{font-size:.82rem;color:var(--mu);}
+.scard-cat{display:inline-block;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:9999px;margin-top:.2rem;}
+.scard-cat.c0{background:var(--gnb);color:var(--gn);}
+.scard-cat.c1{background:var(--blb);color:var(--bl);}
+.scard-cat.c2{background:rgba(241,196,15,.12);color:var(--yl);}
+.scard-err{font-size:.62rem;color:var(--rd);opacity:.8;margin-top:.15rem;}
+.scard-footer{display:flex;align-items:center;justify-content:space-between;padding-top:.65rem;border-top:1px solid var(--bd);margin-top:auto;gap:.5rem;}
+.scard-time{font-size:.62rem;color:var(--fa);}
+.btn-listen{padding:.375rem .75rem;border-radius:.5rem;font:inherit;font-size:.72rem;font-weight:700;cursor:pointer;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:.375rem;}
+.btn-listen.online{background:var(--gn);color:#fff;}.btn-listen.online:hover{background:var(--gnp);}
+.btn-listen.silencio{background:var(--or);color:#fff;opacity:.7;cursor:not-allowed;pointer-events:none;}
+.btn-listen.offline{background:var(--soff);color:var(--fa);cursor:not-allowed;opacity:.6;pointer-events:none;}
+.empty{display:flex;flex-direction:column;align-items:center;text-align:center;padding:4rem 2rem;color:var(--mu);}
+.empty svg{margin-bottom:1rem;}.empty h3{color:var(--tx);font-size:1.2rem;margin-bottom:.5rem;}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">
+    <svg viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="16" stroke="var(--pr)" stroke-width="1.5"/><circle cx="17" cy="17" r="10" stroke="var(--pr)" stroke-width="1" opacity=".4"/><circle cx="17" cy="17" r="4.5" fill="var(--pr)"/><path d="M4.5 17 Q10 10 17 17 Q24 24 29.5 17" stroke="var(--pr)" stroke-width="1.5" fill="none" opacity=".35"/></svg>
+    <div><div class="logo-name">Epicentro Radio</div><div class="logo-sub">Monitor de Señales en Vivo</div></div>
+  </a>
+  <div class="hdr-r">
+    <span class="tag">🔄 __TS__</span>
+    <button class="ibtn" data-theme-toggle><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero">
+    <div class="hcard total"><div class="hcard-n">__TOTAL__</div><div class="hcard-l">Señales totales</div></div>
+    <div class="hcard online"><div class="hcard-n">__ONLINE__</div><div class="hcard-l">Al aire ✅</div></div>
+    <div class="hcard" style="border-left:3px solid var(--or)"><div class="hcard-n" style="color:var(--or)">__SILENCIO__</div><div class="hcard-l">En silencio 🔇</div></div>
+    <div class="hcard offline"><div class="hcard-n">__OFFLINE__</div><div class="hcard-l">Cortadas ❌</div></div>
+    <div class="hcard" style="border-left:3px solid var(--yl)"><div class="hcard-n" id="sPct" style="color:var(--yl)">—</div><div class="hcard-l">Disponibilidad</div></div>
+  </div>
+
+  <div class="cat-tabs">
+    <button class="ctab active-all" onclick="setCat('',this)">🗂 Todas</button>
+    <button class="ctab" onclick="setCat('Señales al Aire',this)">📡 Señales al Aire</button>
+    <button class="ctab" onclick="setCat('Cadena Nacional',this)">🌐 Cadena Nacional</button>
+    <button class="ctab" onclick="setCat('Enlace Aire Interno',this)">🔧 Enlace Aire Interno</button>
+  </div>
+
+  <div class="controls">
+    <div class="sw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" id="sq" placeholder="Buscar señal, ciudad..."></div>
+    <select id="szona"><option value="">Todas las zonas</option></select>
+    <button class="filter-btn on" id="btnOnline" onclick="toggleF('online')">✅ Al aire</button>
+    <button class="filter-btn on off2" id="btnOffline" onclick="toggleF('offline')">❌ Cortadas</button>
+  </div>
+
+  <div id="output"></div>
+  <div id="empty" class="empty" style="display:none">
+    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></svg>
+    <h3>Sin señales</h3><p>No hay señales para ese filtro.</p>
+  </div>
+</div>
+
+<script>
+const D=__DATA_JS__;
+const señales=D.senales || [];
+const CATS=["Señales al Aire","Cadena Nacional","Enlace Aire Interno"];
+const CAT_CLS=["c0","c1","c2"];
+let sq="",sz="",sc="",sOn=true,sOff=true;
+
+function zonas(){return[...new Set(señales.map(s=>s.zona))].sort();}
+function initSel(){zonas().forEach(z=>{const o=document.createElement("option");o.value=z;o.textContent="📍 "+z;document.getElementById("szona").appendChild(o);});}
+function ta(iso){try{const d=new Date(iso),df=Math.floor((Date.now()-d)/1e3);if(df<60)return"hace "+df+"s";if(df<3600)return"hace "+Math.floor(df/60)+"min";if(df<86400)return"hace "+Math.floor(df/3600)+"h";return"hace "+Math.floor(df/86400)+"d";}catch{return"";}}
+function pct(){const on=señales.filter(s=>s.estado==="online").length;document.getElementById("sPct").textContent=Math.round((on/señales.length)*100)+"%";}
+function filtered(){const q=sq.toLowerCase();return señales.filter(s=>(!q||[s.nombre,s.ciudad,s.zona].join(" ").toLowerCase().includes(q))&&(!sz||s.zona===sz)&&(!sc||s.categoria===sc)&&((s.estado==="online"&&sOn)||(s.estado==="offline"&&sOff)||(s.estado==="silencio")));}
+function catCls(cat){const i=CATS.indexOf(cat);return i>=0?CAT_CLS[i]:"c0";}
+
+function render(){
+  const list=filtered(),out=document.getElementById("output"),emp=document.getElementById("empty");
+  if(!list.length){out.innerHTML="";emp.style.display="flex";return;}
+  emp.style.display="none";
+  const pz={};list.forEach(s=>{if(!pz[s.zona])pz[s.zona]=[];pz[s.zona].push(s);});
+  const ord=["Valparaiso","O-Higgins","Coquimbo","Atacama","Los-Rios","Biobio","Magallanes","Nacional"];
+  const zs=ord.filter(z=>pz[z]).concat(Object.keys(pz).filter(z=>!ord.includes(z)));
+  out.innerHTML=zs.map(zona=>{
+    const ss=pz[zona],onc=ss.filter(s=>s.estado==="online").length;
+    return`<div class="zona-section"><div class="zona-header"><div class="zona-dot zc-${zona}"></div><div class="zona-title">Región de ${zona.replace(/-/g,"'")}</div><div class="zona-badge">${onc}/${ss.length} al aire</div></div><div class="signals-grid">${ss.map(s=>{
+      const on=s.estado==="online";
+      const sil=s.estado==="silencio";
+      const lbl=on?"AL AIRE":(sil?"SILENCIO":"CORTADA");
+      return`<div class="scard ${s.estado}"><div class="status-bar"><div class="status-pill ${s.estado}"><div class="pulse ${s.estado}"></div>${lbl}</div><span class="freq">${s.frecuencia} FM</span></div><div><div class="scard-name">${s.nombre}</div><div class="scard-ciudad">📍 ${s.ciudad}</div><span class="scard-cat ${catCls(s.categoria)}">${s.categoria}</span>${!on&&s.error?`<div class="scard-err">⚠ ${s.error}</div>`:""}</div><div class="scard-footer"><span class="scard-time">Verif. ${ta(s.verificado)}</span><a class="btn-listen ${s.estado}" ${on?`href="${s.url}" target="_blank" rel="noopener"`:""}><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>${on?"Escuchar":(sil?"Sin audio":"No disp.")}</a></div></div>`;
+    }).join("")}</div></div>`;
+  }).join("");
+}
+
+function setCat(val,btn){
+  sc=val;
+  document.querySelectorAll(".ctab").forEach(b=>b.className="ctab");
+  if(!val)btn.classList.add("active-all");
+  else if(val==="Señales al Aire")btn.classList.add("active-aire");
+  else if(val==="Cadena Nacional")btn.classList.add("active-cadena");
+  else btn.classList.add("active-enlace");
+  render();
+}
+function toggleF(t){if(t==="online"){sOn=!sOn;document.getElementById("btnOnline").classList.toggle("on",sOn);}else{sOff=!sOff;document.getElementById("btnOffline").classList.toggle("on",sOff);}render();}
+
+(function(){const t=document.querySelector("[data-theme-toggle]"),r=document.documentElement;let d=r.getAttribute("data-theme")||"dark";function ui(){t.innerHTML=d==="dark"?`<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`:`<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;}ui();t&&t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);ui();});})();
+
+document.getElementById("sq").addEventListener("input",e=>{sq=e.target.value;render();});
+document.getElementById("szona").addEventListener("change",e=>{sz=e.target.value;render();});
+initSel();pct();render();
+</script>
+</body>
+</html>
