@@ -1,0 +1,37 @@
+name: Verificar senales y publicar
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Verificar senales
+        run: cd src && python checker.py && cd ..
+      - name: Commit estado
+        run: |
+          git config user.name "Epicentro Bot"
+          git config user.email "bot@epicentroradio.com"
+          git add data/estado.json
+          git diff --staged --quiet || git commit -m "Senales actualizadas $(date '+%d/%m/%Y %H:%M')"
+          git push
+      - name: Generar HTML
+        run: cd src && python build.py && cd ..
+      - name: Deploy GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
