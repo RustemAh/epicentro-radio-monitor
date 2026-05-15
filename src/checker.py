@@ -9,6 +9,8 @@ TIMEOUT = 10
 REINTENTOS = 2
 AUDIO_CHECK_BYTES = 65536
 SILENCE_THRESHOLD = 500
+VARIATION_THRESHOLD = 1000
+UNIQUE_VALUES_MIN = 30  # Mínimo de valores únicos en 100 muestras para ser audio real
 
 def check_stream(s):
     for i in range(REINTENTOS):
@@ -42,11 +44,29 @@ def check_stream(s):
                 if not samples:
                     return "online", r.status_code, None
 
-                avg_amplitude = sum(samples) / len(samples)
+                # Calcular estadísticas
+                n = len(samples)
+                avg_amplitude = sum(samples) / n
                 max_amplitude = max(samples)
 
+                # Calcular desviación estándar
+                variance = sum((x - avg_amplitude) ** 2 for x in samples) / n
+                std_dev = variance ** 0.5
+
+                # Contar valores únicos en las primeras 100 muestras
+                unique_count = len(set(samples[:100]))
+
+                # 1. Detectar silencio total: amplitud muy baja
                 if avg_amplitude < SILENCE_THRESHOLD and max_amplitude < 2000:
-                    return "silencio", r.status_code, f"Stream en silencio (amp: {int(avg_amplitude)})"
+                    return "silencio", r.status_code, f"Silencio total (amp: {int(avg_amplitude)})"
+
+                # 2. Detectar tono continuo/sin programación: pocos valores únicos
+                if unique_count < UNIQUE_VALUES_MIN:
+                    return "silencio", r.status_code, f"Sin programacion (uniq: {unique_count})"
+
+                # 3. Detectar ruido sin variación
+                if std_dev < VARIATION_THRESHOLD:
+                    return "silencio", r.status_code, f"Tono continuo (var: {int(std_dev)})"
 
                 return "online", r.status_code, None
 
