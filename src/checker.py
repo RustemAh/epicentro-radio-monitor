@@ -1,7 +1,8 @@
 import json, requests, time, sys
 from datetime import datetime, timezone
 from pathlib import Path
-sys.path.insert(0, ".")
+
+sys.path.insert(0, str(Path(__file__).parent))
 from streams import STREAMS
 
 TIMEOUT = 10
@@ -35,8 +36,9 @@ def main():
         else: off+=1
         resultados.append({**{k:s[k] for k in ["nombre","zona","frecuencia","ciudad","categoria","url","url_web","lat","lon"]},
                             "estado":estado,"http_code":code,"error":error,"verificado":now.isoformat()})
-    Path("data").mkdir(exist_ok=True)
-    with open("data/estado.json","w",encoding="utf-8") as f:
+    data_dir = Path(__file__).parent.parent / "data"
+    data_dir.mkdir(exist_ok=True)
+    with open(data_dir / "estado.json","w",encoding="utf-8") as f:
         json.dump({"verificado":now.isoformat(),"total":len(STREAMS),"online":on,"offline":off,"senales":resultados},f,ensure_ascii=False,indent=2)
     print(f"\n Resultado: {on} online / {off} offline")
 
