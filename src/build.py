@@ -22,6 +22,7 @@ html = html.replace("__TS__", ts)
 html = html.replace("__TOTAL__", str(data["total"]))
 html = html.replace("__ONLINE__", str(data["online"]))
 html = html.replace("__OFFLINE__", str(data["offline"]))
+html = html.replace("__SILENCIO__", str(data.get("silencio", 0)))
 
 (PUBLIC / "index.html").write_text(html, encoding="utf-8")
-print(f"HTML generado: {data['total']} senales, {data['online']} online")
+print(f"HTML generado: {data['total']} senales, {data['online']} online, {data.get('silencio',0)} silencio")
