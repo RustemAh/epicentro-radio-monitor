@@ -1,5 +1,5 @@
 {
-  "verificado": "2026-05-15T19:21:09.010598+00:00",
+  "verificado": "2026-05-15T20:37:04.374438+00:00",
   "total": 36,
   "online": 33,
   "offline": 0,
@@ -18,7 +18,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Zapallar 93.5 FM",
@@ -33,7 +33,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Casablanca 103.9 FM",
@@ -48,7 +48,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Happy Radio Papudo 91.5 FM",
@@ -63,7 +63,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Pichilemu 93.1 FM",
@@ -78,7 +78,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Pichilemu 98.3 FM",
@@ -92,8 +92,8 @@
       "lon": -72.01,
       "estado": "silencio",
       "http_code": 200,
-      "error": "Sin programacion (uniq: 6)",
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "error": "Sin programacion (uniq: 15)",
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Pichilemu 101.1 FM",
@@ -108,7 +108,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Los Vilos 98.5 FM",
@@ -123,7 +123,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Salamanca 88.3 FM",
@@ -138,7 +138,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Salamanca 96.7 FM",
@@ -153,7 +153,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Illapel 101.1 FM",
@@ -168,7 +168,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Cuncumen 88.3 FM",
@@ -183,7 +183,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Caldera 95.5 FM",
@@ -198,7 +198,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Vallenar 93.9 FM",
@@ -213,7 +213,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Huasco 97.1 FM",
@@ -228,7 +228,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Arauco 99.1 FM",
@@ -243,7 +243,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Coronel 103.7 FM",
@@ -258,7 +258,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Antartica 100.7 FM",
@@ -273,7 +273,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Mariquina 90.3 FM",
@@ -288,7 +288,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Puerto Natales 100.5 FM",
@@ -303,7 +303,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Epicentro Radio S1",
@@ -318,7 +318,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Epicentro Radio S2 /movilred",
@@ -333,7 +333,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Epicentro Radio S2 /epicentrocl",
@@ -348,7 +348,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Epicentro Radio S2 /epicentro3",
@@ -363,7 +363,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Happy Radio S1",
@@ -378,7 +378,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Happy Radio S2 /happy2",
@@ -393,7 +393,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Happy Radio S2 /happy1",
@@ -408,7 +408,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Enlace Nexo FM 102.3",
@@ -423,7 +423,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Enlace Top FM aire",
@@ -438,7 +438,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Enlace Top FM",
@@ -453,7 +453,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Enlace Happy Flac Limache",
@@ -468,7 +468,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Enlace Happy Flac Movistar",
@@ -483,7 +483,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Enlace Happy 3",
@@ -498,7 +498,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "Link 983 Surfbeats",
@@ -513,7 +513,7 @@
       "estado": "online",
       "http_code": 200,
       "error": null,
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "RadioCaster Live2",
@@ -527,8 +527,8 @@
       "lon": -70.68,
       "estado": "silencio",
       "http_code": 200,
-      "error": "Sin programacion (uniq: 10)",
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "error": "Sin programacion (uniq: 1)",
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     },
     {
       "nombre": "RadioCaster Master",
@@ -542,8 +542,8 @@
       "lon": -70.69,
       "estado": "silencio",
       "http_code": 200,
-      "error": "Sin programacion (uniq: 1)",
-      "verificado": "2026-05-15T19:21:09.010598+00:00"
+      "error": "Sin programacion (uniq: 21)",
+      "verificado": "2026-05-15T20:37:04.374438+00:00"
     }
   ]
 }
