@@ -1,4 +1,4 @@
-import json, requests, time, sys, io
+import json, requests, time, sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -7,21 +7,18 @@ from streams import STREAMS
 
 TIMEOUT = 10
 REINTENTOS = 2
-AUDIO_CHECK_BYTES = 65536  # 64KB de stream para analizar
-SILENCE_THRESHOLD = 500    # Umbral de amplitud (ajustable)
+AUDIO_CHECK_BYTES = 65536
+SILENCE_THRESHOLD = 500
 
 def check_stream(s):
-    """Verifica conexión Y si hay audio real"""
     for i in range(REINTENTOS):
         try:
-            # 1. Verificar conexión al stream
             r = requests.get(s["url"], timeout=TIMEOUT, stream=True,
                               headers={"User-Agent":"EpicentroMonitor/1.0","Icy-MetaData":"1"})
 
             if r.status_code >= 400:
                 return "offline", r.status_code, f"HTTP {r.status_code}"
 
-            # 2. Descargar muestra de audio para analizar
             audio_data = b""
             try:
                 for chunk in r.iter_content(chunk_size=8192):
@@ -36,7 +33,6 @@ def check_stream(s):
             if len(audio_data) < 1000:
                 return "offline", None, "Stream vacio"
 
-            # 3. Análisis simple de amplitud (detecta silencio)
             try:
                 samples = []
                 for j in range(0, min(len(audio_data)-1, 10000), 2):
@@ -51,3 +47,66 @@ def check_stream(s):
 
                 if avg_amplitude < SILENCE_THRESHOLD and max_amplitude < 2000:
                     return "silencio", r.status_code, f"Stream en silencio (amp: {int(avg_amplitude)})"
+
+                return "online", r.status_code, None
+
+            except Exception as e:
+                return "online", r.status_code, None
+
+        except requests.exceptions.ConnectionError:
+            err = "Sin conexion al servidor"
+        except requests.exceptions.Timeout:
+            err = "Timeout sin respuesta"
+        except Exception as e:
+            err = str(e)[:80]
+
+        if i < REINTENTOS-1:
+            time.sleep(2)
+
+    return "offline", None, err
+
+def main():
+    now = datetime.now(timezone.utc)
+    print(f"\n Verificacion con analisis de audio {now.strftime('%d/%m/%Y %H:%M UTC')}")
+    resultados, on, off, sil = [], 0, 0, 0
+
+    for s in STREAMS:
+        estado, code, error = check_stream(s)
+
+        if estado == "online":
+            icono = "OK"
+            on += 1
+        elif estado == "silencio":
+            icono = "SIL"
+            sil += 1
+        else:
+            icono = "XX"
+            off += 1
+
+        print(f"  {icono} [{s['categoria'][:8]}] {s['nombre']}: {estado.upper()}{' - '+error if error else ''}")
+
+        resultados.append({
+            **{k:s[k] for k in ["nombre","zona","frecuencia","ciudad","categoria","url","url_web","lat","lon"]},
+            "estado": estado,
+            "http_code": code,
+            "error": error,
+            "verificado": now.isoformat()
+        })
+
+    data_dir = Path(__file__).parent.parent / "data"
+    data_dir.mkdir(exist_ok=True)
+
+    with open(data_dir / "estado.json","w",encoding="utf-8") as f:
+        json.dump({
+            "verificado": now.isoformat(),
+            "total": len(STREAMS),
+            "online": on,
+            "offline": off,
+            "silencio": sil,
+            "senales": resultados
+        }, f, ensure_ascii=False, indent=2)
+
+    print(f"\n Resultado: {on} online / {sil} silencio / {off} offline")
+
+if __name__=="__main__":
+    main()
