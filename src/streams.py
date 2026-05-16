@@ -21,6 +21,7 @@ STREAMS = [
     # ── SEÑALES AL AIRE — ATACAMA ─────────────────────────
     {"nombre":"Caldera 95.5 FM","zona":"Atacama","frecuencia":"95.5","ciudad":"Caldera","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/caldera","url_web":"https://movilred.net","lat":-27.0667,"lon":-70.8167},
     {"nombre":"Vallenar 93.9 FM","zona":"Atacama","frecuencia":"93.9","ciudad":"Vallenar","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/vallenar939","url_web":"https://movilred.net","lat":-28.5667,"lon":-70.7667},
+    {"nombre":"Salvador 89.7 FM","zona":"Atacama","frecuencia":"89.7","ciudad":"Diego de Almagro","categoria":"Señales al Aire","url":"186.179.93.38:7080/salvador","url_web":"https://movilred.net","lat":-28.5667,"lon":-70.7667},
     {"nombre":"Huasco 97.1 FM","zona":"Atacama","frecuencia":"97.1","ciudad":"Huasco","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/huasco","url_web":"https://movilred.net","lat":-28.4667,"lon":-71.2167},
     # ── SEÑALES AL AIRE — BIOBIO ──────────────────────────
     {"nombre":"Arauco 99.1 FM","zona":"Biobio","frecuencia":"99.1","ciudad":"Arauco","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/arauco991","url_web":"https://movilred.net","lat":-37.25,"lon":-73.3167},
