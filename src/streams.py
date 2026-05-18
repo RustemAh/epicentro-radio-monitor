@@ -18,6 +18,7 @@ STREAMS = [
     {"nombre":"Salamanca 96.7 FM","zona":"Coquimbo","frecuencia":"96.7","ciudad":"Salamanca","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/salamanca967","url_web":"https://movilred.net","lat":-31.78,"lon":-70.96},
     {"nombre":"Illapel 101.1 FM","zona":"Coquimbo","frecuencia":"101.1","ciudad":"Illapel","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/illapel101","url_web":"https://movilred.net","lat":-31.6333,"lon":-71.1667},
     {"nombre":"Cuncumen 88.3 FM","zona":"Coquimbo","frecuencia":"88.3","ciudad":"Cuncumen","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/cuncumen883","url_web":"https://movilred.net","lat":-31.9333,"lon":-70.6167},
+    {"nombre": "Monte Patria 96.3 FM", "zona": "Coquimbo", "frecuencia": "96.3", "ciudad": "Monte Patria", "categoria": "Señales al Aire", "url": "http://186.179.93.38:7080/montepatria963", "url_web": "https://movilred.net", "lat": -30.8333, "lon": -70.9500},
     # ── SEÑALES AL AIRE — ATACAMA ─────────────────────────
     {"nombre":"Caldera 95.5 FM","zona":"Atacama","frecuencia":"95.5","ciudad":"Caldera","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/caldera","url_web":"https://movilred.net","lat":-27.0667,"lon":-70.8167},
     {"nombre":"Vallenar 93.9 FM","zona":"Atacama","frecuencia":"93.9","ciudad":"Vallenar","categoria":"Señales al Aire","url":"http://186.179.93.38:7080/vallenar939","url_web":"https://movilred.net","lat":-28.5667,"lon":-70.7667},
