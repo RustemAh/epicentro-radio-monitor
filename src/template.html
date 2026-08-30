@@ -99,7 +99,7 @@ select:focus{outline:none;border-color:var(--pr);}
 .btn-listen{padding:.375rem .75rem;border-radius:.5rem;font:inherit;font-size:.72rem;font-weight:700;cursor:pointer;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:.375rem;transition:all .15s;}
 .btn-listen.online{background:var(--gn);color:#fff;}.btn-listen.online:hover{background:var(--gnp);}
 .btn-listen.silencio{background:var(--or);color:#fff;opacity:.85;}.btn-listen.silencio:hover{opacity:1;}
-.btn-listen.offline{background:var(--soff);color:var(--fa);cursor:not-allowed;opacity:.6;pointer-events:none;}
+.btn-listen.offline{background:var(--rdb);color:var(--rd);border:1px solid var(--rd);cursor:pointer;opacity:1;pointer-events:auto;}.btn-listen.offline:hover{background:var(--rd);color:#fff;}
 .empty{display:flex;flex-direction:column;align-items:center;text-align:center;padding:4rem 2rem;color:var(--mu);}
 .empty svg{margin-bottom:1rem;}.empty h3{color:var(--tx);font-size:1.2rem;margin-bottom:.5rem;}
 </style>
@@ -175,10 +175,9 @@ function render(){
     return`<div class="zona-section"><div class="zona-header"><div class="zona-dot zc-${zona}"></div><div class="zona-title">Región de ${zona.replace(/-/g,"'")}</div><div class="zona-badge">${onc}/${ss.length} al aire</div></div><div class="signals-grid">${ss.map(s=>{
       const on=s.estado==="online";
       const sil=s.estado==="silencio";
-      const off=s.estado==="offline";
       const lbl=on?"AL AIRE":(sil?"SILENCIO":"CORTADA");
-      const btnLbl=on?"Escuchar":(sil?"Verificar":"No disp.");
-      return`<div class="scard ${s.estado}"><div class="status-bar"><div class="status-pill ${s.estado}"><div class="pulse ${s.estado}"></div>${lbl}</div><span class="freq">${s.frecuencia} FM</span></div><div><div class="scard-name">${s.nombre}</div><div class="scard-ciudad">📍 ${s.ciudad}</div><span class="scard-cat ${catCls(s.categoria)}">${s.categoria}</span>${s.error?`<div class="scard-err">⚠ ${s.error}</div>`:""}</div><div class="scard-footer"><span class="scard-time">Verif. ${ta(s.verificado)}</span><a class="btn-listen ${s.estado}" ${!off?`href="${s.url}" target="_blank" rel="noopener"`:""}><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>${btnLbl}</a></div></div>`;
+      const btnLbl=on?"Escuchar":(sil?"Verificar":"Escuchar");
+      return`<div class="scard ${s.estado}"><div class="status-bar"><div class="status-pill ${s.estado}"><div class="pulse ${s.estado}"></div>${lbl}</div><span class="freq">${s.frecuencia} FM</span></div><div><div class="scard-name">${s.nombre}</div><div class="scard-ciudad">📍 ${s.ciudad}</div><span class="scard-cat ${catCls(s.categoria)}">${s.categoria}</span>${s.error?`<div class="scard-err">⚠ ${s.error}</div>`:""}</div><div class="scard-footer"><span class="scard-time">Verif. ${ta(s.verificado)}</span><a class="btn-listen ${s.estado}" href="${s.url}" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>${btnLbl}</a></div></div>`;
     }).join("")}</div></div>`;
   }).join("");
 }
@@ -194,7 +193,7 @@ function setCat(val,btn){
 }
 function toggleF(t){if(t==="online"){sOn=!sOn;document.getElementById("btnOnline").classList.toggle("on",sOn);}else{sOff=!sOff;document.getElementById("btnOffline").classList.toggle("on",sOff);}render();}
 
-(function(){const t=document.querySelector("[data-theme-toggle]"),r=document.documentElement;let d=r.getAttribute("data-theme")||"dark";function ui(){t.innerHTML=d==="dark"?`<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`:`<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;}ui();t&&t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);ui();});})();
+(function(){const t=document.querySelector("[data-theme-toggle]"),r=document.documentElement;let d=r.getAttribute("data-theme")||"dark";function ui(){t.innerHTML=d==="dark"?`<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`:`<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;}ui();t&&t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);ui();});})();
 
 document.getElementById("sq").addEventListener("input",e=>{sq=e.target.value;render();});
 document.getElementById("szona").addEventListener("change",e=>{sz=e.target.value;render();});
