@@ -7,6 +7,11 @@ STREAMS = [
     {"nombre":"Zapallar 93.5 FM","zona":"Valparaíso","frecuencia":"93.5","ciudad":"Zapallar","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/xqb440","url_web":"https://movilred.net","lat":-32.55,"lon":-71.45},
     {"nombre":"Casablanca 103.9 FM","zona":"Valparaíso","frecuencia":"103.9","ciudad":"Casablanca","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/casablanca1039","url_web":"https://movilred.net","lat":-33.3167,"lon":-71.4167},
     {"nombre":"Happy Radio Papudo 91.5 FM","zona":"Valparaíso","frecuencia":"91.5","ciudad":"Papudo","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/happyxqb442","url_web":"https://happyradio.cl","lat":-32.50,"lon":-71.45},
+    {"nombre":"Epicentro Petorca (Chincolco)","zona":"Valparaíso","frecuencia":"—","ciudad":"Chincolco","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/chincolco","url_web":"https://movilred.net","lat":-32.2033,"lon":-70.9706},
+    {"nombre":"Putaendo / San Felipe 88.1 FM","zona":"Valparaíso","frecuencia":"88.1","ciudad":"Putaendo","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/putaendo881","url_web":"https://movilred.net","lat":-32.6283,"lon":-70.7172},
+    {"nombre":"La Calera 96.5 FM","zona":"Valparaíso","frecuencia":"96.5","ciudad":"La Calera","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/calera965","url_web":"https://movilred.net","lat":-32.7875,"lon":-71.1892},
+    {"nombre":"Casablanca 96.9 FM","zona":"Valparaíso","frecuencia":"96.9","ciudad":"Casablanca","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/casablanca969","url_web":"https://movilred.net","lat":-33.3167,"lon":-71.4167},
+    
     # ── SEÑALES AL AIRE — O HIGGINS ───────────────────────
     {"nombre":"Pichilemu 101.1 FM","zona":"O'Higgins","frecuencia":"101.1","ciudad":"Pichilemu","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/pichilemu101","url_web":"https://movilred.net","lat":-34.40,"lon":-72.02},
     # ── SEÑALES AL AIRE — COQUIMBO ────────────────────────
@@ -17,6 +22,8 @@ STREAMS = [
     {"nombre":"Ovalle 103.1 FM","zona":"Coquimbo","frecuencia":"103.1","ciudad":"Ovalle","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/ovalle","url_web":"https://movilred.net","lat":-30.5983,"lon":-71.2003},
     {"nombre":"Cuncumen 88.3 FM","zona":"Coquimbo","frecuencia":"88.3","ciudad":"Cuncumen","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/cuncumen883","url_web":"https://movilred.net","lat":-31.9333,"lon":-70.6167},
     {"nombre": "Monte Patria 96.3 FM", "zona": "Coquimbo", "frecuencia": "96.3", "ciudad": "Monte Patria", "categoria": "Señales al Aire", "url": "http://201.236.29.182:7080/montepatria963", "url_web": "https://movilred.net", "lat": -30.8333, "lon": -70.9500},
+    {"nombre":"Happy Radio Cuncumén 106.1 FM","zona":"Coquimbo","frecuencia":"106.1","ciudad":"Cuncumen","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/cuncumen1061","url_web":"https://happyradio.cl","lat":-31.9333,"lon":-70.6167},
+
     # ── SEÑALES AL AIRE — ATACAMA ─────────────────────────
     {"nombre":"Caldera 95.5 FM","zona":"Atacama","frecuencia":"95.5","ciudad":"Caldera","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/caldera","url_web":"https://movilred.net","lat":-27.0667,"lon":-70.8167},
     {"nombre":"Vallenar 93.9 FM","zona":"Atacama","frecuencia":"93.9","ciudad":"Vallenar","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/vallenar939","url_web":"https://movilred.net","lat":-28.5667,"lon":-70.7667},
@@ -30,6 +37,8 @@ STREAMS = [
     {"nombre":"Mariquina 90.3 FM","zona":"Los Rios","frecuencia":"90.3","ciudad":"Mariquina","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/mariquina","url_web":"https://movilred.net","lat":-39.5167,"lon":-73.0},
     # ── SEÑALES AL AIRE — MAGALLANES ─────────────────────
     {"nombre":"Puerto Natales 100.5 FM","zona":"Magallanes","frecuencia":"100.5","ciudad":"Puerto Natales","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/natales","url_web":"https://movilred.net","lat":-51.7333,"lon":-72.5},
+    {"nombre":"Rancherita Punta Arenas 89.1 FM","zona":"Magallanes","frecuencia":"89.1","ciudad":"Punta Arenas","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/puq891","url_web":"https://movilred.net","lat":-53.1638,"lon":-70.9171},
+
     # ── CADENA NACIONAL ───────────────────────────────────
     {"nombre":"Epicentro Radio S1","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/movilred","url_web":"https://movilred.net","lat":-33.45,"lon":-70.6667},
     {"nombre":"Epicentro Radio S2 /movilred","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/movilred","url_web":"https://movilred.net","lat":-33.45,"lon":-70.65},
