@@ -6,14 +6,15 @@ STREAMS = [
     {"nombre":"La Ligua 88.9 FM","zona":"Valparaíso","frecuencia":"88.9","ciudad":"La Ligua","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/laligua889","url_web":"https://movilred.net","lat":-32.45,"lon":-71.2333},
     {"nombre":"Zapallar 93.5 FM","zona":"Valparaíso","frecuencia":"93.5","ciudad":"Zapallar","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/xqb440","url_web":"https://movilred.net","lat":-32.55,"lon":-71.45},
     {"nombre":"Casablanca 103.9 FM","zona":"Valparaíso","frecuencia":"103.9","ciudad":"Casablanca","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/casablanca1039","url_web":"https://movilred.net","lat":-33.3167,"lon":-71.4167},
-    {"nombre":"Happy Radio Papudo 91.5 FM","zona":"Valparaíso","frecuencia":"91.5","ciudad":"Papudo","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/happyxqb442","url_web":"https://happyradio.cl","lat":-32.50,"lon":-71.45},
-    {"nombre":"Epicentro Petorca (Chincolco)","zona":"Valparaíso","frecuencia":"—","ciudad":"Chincolco","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/chincolco","url_web":"https://movilred.net","lat":-32.2033,"lon":-70.9706},
-    {"nombre":"Putaendo / San Felipe 88.1 FM","zona":"Valparaíso","frecuencia":"88.1","ciudad":"Putaendo","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/putaendo881","url_web":"https://movilred.net","lat":-32.6283,"lon":-70.7172},
-    {"nombre":"La Calera 96.5 FM","zona":"Valparaíso","frecuencia":"96.5","ciudad":"La Calera","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/calera965","url_web":"https://movilred.net","lat":-32.7875,"lon":-71.1892},
     {"nombre":"Casablanca 96.9 FM","zona":"Valparaíso","frecuencia":"96.9","ciudad":"Casablanca","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/casablanca969","url_web":"https://movilred.net","lat":-33.3167,"lon":-71.4167},
-    
+    {"nombre":"La Calera 96.5 FM","zona":"Valparaíso","frecuencia":"96.5","ciudad":"La Calera","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/calera965","url_web":"https://movilred.net","lat":-32.7875,"lon":-71.1892},
+    {"nombre":"Putaendo / San Felipe 88.1 FM","zona":"Valparaíso","frecuencia":"88.1","ciudad":"Putaendo","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/putaendo881","url_web":"https://movilred.net","lat":-32.6283,"lon":-70.7172},
+    {"nombre":"Epicentro Petorca (Chincolco)","zona":"Valparaíso","frecuencia":"—","ciudad":"Chincolco","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/chincolco","url_web":"https://movilred.net","lat":-32.2033,"lon":-70.9706},
+    {"nombre":"Happy Radio Papudo 91.5 FM","zona":"Valparaíso","frecuencia":"91.5","ciudad":"Papudo","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/happyxqb442","url_web":"https://happyradio.cl","lat":-32.50,"lon":-71.45},
+
     # ── SEÑALES AL AIRE — O HIGGINS ───────────────────────
     {"nombre":"Pichilemu 101.1 FM","zona":"O'Higgins","frecuencia":"101.1","ciudad":"Pichilemu","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/pichilemu101","url_web":"https://movilred.net","lat":-34.40,"lon":-72.02},
+
     # ── SEÑALES AL AIRE — COQUIMBO ────────────────────────
     {"nombre":"Los Vilos 98.5 FM","zona":"Coquimbo","frecuencia":"98.5","ciudad":"Los Vilos","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/losvilos985","url_web":"https://movilred.net","lat":-31.9167,"lon":-71.5},
     {"nombre":"Salamanca 88.3 FM","zona":"Coquimbo","frecuencia":"88.3","ciudad":"Salamanca","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/salamanca883","url_web":"https://movilred.net","lat":-31.7833,"lon":-70.9667},
@@ -21,20 +22,22 @@ STREAMS = [
     {"nombre":"Illapel 101.1 FM","zona":"Coquimbo","frecuencia":"101.1","ciudad":"Illapel","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/illapel101","url_web":"https://movilred.net","lat":-31.6333,"lon":-71.1667},
     {"nombre":"Ovalle 103.1 FM","zona":"Coquimbo","frecuencia":"103.1","ciudad":"Ovalle","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/ovalle","url_web":"https://movilred.net","lat":-30.5983,"lon":-71.2003},
     {"nombre":"Cuncumen 88.3 FM","zona":"Coquimbo","frecuencia":"88.3","ciudad":"Cuncumen","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/cuncumen883","url_web":"https://movilred.net","lat":-31.9333,"lon":-70.6167},
-    {"nombre": "Monte Patria 96.3 FM", "zona": "Coquimbo", "frecuencia": "96.3", "ciudad": "Monte Patria", "categoria": "Señales al Aire", "url": "http://201.236.29.182:7080/montepatria963", "url_web": "https://movilred.net", "lat": -30.8333, "lon": -70.9500},
     {"nombre":"Happy Radio Cuncumén 106.1 FM","zona":"Coquimbo","frecuencia":"106.1","ciudad":"Cuncumen","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/cuncumen1061","url_web":"https://happyradio.cl","lat":-31.9333,"lon":-70.6167},
+    {"nombre":"Monte Patria 96.3 FM","zona":"Coquimbo","frecuencia":"96.3","ciudad":"Monte Patria","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/montepatria963","url_web":"https://movilred.net","lat":-30.8333,"lon":-70.9500},
 
     # ── SEÑALES AL AIRE — ATACAMA ─────────────────────────
     {"nombre":"Caldera 95.5 FM","zona":"Atacama","frecuencia":"95.5","ciudad":"Caldera","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/caldera","url_web":"https://movilred.net","lat":-27.0667,"lon":-70.8167},
     {"nombre":"Vallenar 93.9 FM","zona":"Atacama","frecuencia":"93.9","ciudad":"Vallenar","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/vallenar939","url_web":"https://movilred.net","lat":-28.5667,"lon":-70.7667},
     {"nombre":"Salvador 89.7 FM","zona":"Atacama","frecuencia":"89.7","ciudad":"Diego de Almagro","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/salvador","url_web":"https://movilred.net","lat":-28.5667,"lon":-70.7667},
     {"nombre":"Huasco 97.1 FM","zona":"Atacama","frecuencia":"97.1","ciudad":"Huasco","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/huasco","url_web":"https://movilred.net","lat":-28.4667,"lon":-71.2167},
+
     # ── SEÑALES AL AIRE — BIOBIO ──────────────────────────
     {"nombre":"Arauco 99.1 FM","zona":"Biobio","frecuencia":"99.1","ciudad":"Arauco","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/arauco991","url_web":"https://movilred.net","lat":-37.25,"lon":-73.3167},
     {"nombre":"Coronel 103.7 FM","zona":"Biobio","frecuencia":"103.7","ciudad":"Coronel","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/coronel","url_web":"https://movilred.net","lat":-37.0167,"lon":-73.15},
-    {"nombre":"Antartica 100.7 FM","zona":"Biobio","frecuencia":"100.7","ciudad":"Antartica","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/antartica","url_web":"https://movilred.net","lat":-37.45,"lon":-73.5},
+
     # ── SEÑALES AL AIRE — LOS RIOS ────────────────────────
     {"nombre":"Mariquina 90.3 FM","zona":"Los Rios","frecuencia":"90.3","ciudad":"Mariquina","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/mariquina","url_web":"https://movilred.net","lat":-39.5167,"lon":-73.0},
+
     # ── SEÑALES AL AIRE — MAGALLANES ─────────────────────
     {"nombre":"Puerto Natales 100.5 FM","zona":"Magallanes","frecuencia":"100.5","ciudad":"Puerto Natales","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/natales","url_web":"https://movilred.net","lat":-51.7333,"lon":-72.5},
     {"nombre":"Rancherita Punta Arenas 89.1 FM","zona":"Magallanes","frecuencia":"89.1","ciudad":"Punta Arenas","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/puq891","url_web":"https://movilred.net","lat":-53.1638,"lon":-70.9171},
@@ -42,14 +45,7 @@ STREAMS = [
     # ── CADENA NACIONAL ───────────────────────────────────
     {"nombre":"Epicentro Radio S1","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/movilred","url_web":"https://movilred.net","lat":-33.45,"lon":-70.6667},
     {"nombre":"Epicentro Radio S2 /movilred","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/movilred","url_web":"https://movilred.net","lat":-33.45,"lon":-70.65},
-    {"nombre":"Epicentro Radio S2 /epicentrocl","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/epicentrocl","url_web":"https://epicentroradio.com","lat":-33.45,"lon":-70.64},
-    {"nombre":"Epicentro Radio S2 /epicentro3","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/epicentro3","url_web":"https://epicentroradio.com","lat":-33.45,"lon":-70.63},
-    {"nombre":"Happy Radio S1","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/happy","url_web":"https://happyradio.cl","lat":-33.44,"lon":-70.6667},
-    {"nombre":"Happy Radio S2 /happy2","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/happy2","url_web":"https://happyradio.cl","lat":-33.44,"lon":-70.65},
-    {"nombre":"Happy Radio S2 /happy1","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Cadena Nacional","url":"http://201.236.29.182:7080/happy1","url_web":"https://happyradio.cl","lat":-33.44,"lon":-70.64},
+
     # ── ENLACE AIRE INTERNO ───────────────────────────────
-    {"nombre":"Enlace Happy Flac Limache","zona":"Valparaíso","frecuencia":"—","ciudad":"Limache","categoria":"Enlace Aire Interno","url":"http://201.236.29.182:7080/happyflac2","url_web":"https://movilred.net","lat":-33.0,"lon":-71.25},
     {"nombre":"Enlace Happy Flac Movistar","zona":"Valparaíso","frecuencia":"—","ciudad":"Vina del Mar","categoria":"Enlace Aire Interno","url":"http://201.236.29.182:7080/happyflac","url_web":"https://movilred.net","lat":-33.025,"lon":-71.55},
-    {"nombre":"Enlace Happy 3","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Enlace Aire Interno","url":"http://201.236.29.182:7080/happy3","url_web":"https://movilred.net","lat":-33.45,"lon":-70.66},
-    {"nombre":"Link 983 Surfbeats","zona":"Nacional","frecuencia":"—","ciudad":"Chile","categoria":"Enlace Aire Interno","url":"http://201.236.29.182:7080/surf2","url_web":"https://movilred.net","lat":-33.45,"lon":-70.67},
 ]
