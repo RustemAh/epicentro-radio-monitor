@@ -11,7 +11,9 @@ STREAMS = [
     {"nombre":"Putaendo / San Felipe 88.1 FM","zona":"Valparaíso","frecuencia":"88.1","ciudad":"Putaendo","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/putaendo881","url_web":"https://movilred.net","lat":-32.6283,"lon":-70.7172},
     {"nombre":"Epicentro Petorca (Chincolco)","zona":"Valparaíso","frecuencia":"—","ciudad":"Chincolco","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/chincolco","url_web":"https://movilred.net","lat":-32.2033,"lon":-70.9706},
     {"nombre":"Happy Radio Papudo 91.5 FM","zona":"Valparaíso","frecuencia":"91.5","ciudad":"Papudo","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/happyxqb442","url_web":"https://happyradio.cl","lat":-32.50,"lon":-71.45},
+    {"nombre":"Rapa Nui (Isla de Pascua)","zona":"Valparaíso","frecuencia":"—","ciudad":"Hanga Roa","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/rapanui","url_web":"https://movilred.net","lat":-27.15,"lon":-109.4333},
 
+    
     # ── SEÑALES AL AIRE — O HIGGINS ───────────────────────
     {"nombre":"Pichilemu 101.1 FM","zona":"O'Higgins","frecuencia":"101.1","ciudad":"Pichilemu","categoria":"Señales al Aire","url":"http://201.236.29.182:7080/pichilemu101","url_web":"https://movilred.net","lat":-34.40,"lon":-72.02},
 
